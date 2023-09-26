@@ -1,0 +1,33 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>tabseminario</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">tabseminario</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Tareas</ion-card-title>
+      <ion-card-subtitle>Listado de Tareas</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list *ngFor="let tarea of tareas">
+        <ion-item>
+          <ion-thumbnail slot="start">
+            <img alt="{{tarea.titulo}}" src="https://picsum.photos/200/300?random=1{{tarea.id}}" />
+          </ion-thumbnail>
+          <ion-label>{{tarea.titulo}} - {{tarea.fecha}}</ion-label>
+          <ion-button id="modaleditar" expand="block" (click)="openIonModal(tarea.id)">Editar</ion-button>
+        </ion-item>
+
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+
+</ion-content>
